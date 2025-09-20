@@ -3,6 +3,7 @@ from src.embeddings import EmbeddingManager
 from src.vector_store import VectorStore
 from src.retriever import RagRetriever
 from src.rag_pipeline import RagPipeline
+from src.rag_advpipeline import AdvancedRAGPipeline
 # Step 1 load pdf's
 pdf_file=load_pdf("data/pdf")
 print(f"Loaded {len(pdf_file)} documents")
@@ -21,7 +22,7 @@ embedding_manager=EmbeddingManager()
 texts=[doc.page_content for doc in chunks]
 embeddings=embedding_manager.generate_embeddings(texts)
 print("\n Example Embedding Vector:")
-#print(embeddings[0][:20])
+print(embeddings[0][:20])
 
 # --------Vector-Store-------
 vector_store=VectorStore()
@@ -35,7 +36,13 @@ for r in results:
 
 
 # -------Rag Pipeline------
-rag=RagPipeline(retriever)
+rag=AdvancedRAGPipeline(retriever)
 query="Factor behind operation radd-ul-fassad"
-answer=rag.query(query,top_k=3)
-print("\n Final Answer:",answer)
+result =rag.query(
+    "Most Significant Terrorist Groups in 2017 and Decline of Terrorism until 2020?",
+    top_k=3,
+    min_score=0.3,
+    stream=True,
+    summarize=True
+)
+print("\n Final Answer:",result)
