@@ -11,3 +11,5 @@ python-dotenv
 streamlit
 python-dotenv
 langchain-openai
+langchain-groq
+tiktoken
