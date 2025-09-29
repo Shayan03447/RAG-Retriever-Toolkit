@@ -3,7 +3,7 @@
 An AI-powered **Retrieval-Augmented Generation (RAG)** application for exploring terrorism-related research papers.  
 Built with **Streamlit**, **LangChain**, and **OpenAI**, this app allows users to query large research documents and get **summarized, citation-backed answers** instantly.
 
----
+
 
 ## ⚡ Features
 - 📂 Upload terrorism-related research PDFs  
@@ -12,10 +12,11 @@ Built with **Streamlit**, **LangChain**, and **OpenAI**, this app allows users t
 - ⚡ Uses RAG pipeline with embeddings + vector store  
 - 🐳 Docker-ready for easy deployment  
 
----
+
 
 ## 📂 Project Structure
 
+```
 terrorism-research-rag/
 │── app.py # Streamlit main app
 │── Dockerfile # Containerization
@@ -29,11 +30,10 @@ terrorism-research-rag/
 │ ├── vector_store.py # Vector DB manager
 │ └── rag_advpipeline.py # Advanced RAG pipeline
 
+```
 
----
+## 1️⃣ Clone Repository
 
-### 1️⃣ Clone Repository
-```bash
 git clone https://github.com/Shayan03447/Terrorism-Research-Rag
 power shell: code .
 
@@ -42,8 +42,6 @@ power shell: code .
 - Add your research PDFs in data/pdf/
 - Start the app
 - Ask a question like:
-
-
 
 # Get:
 
